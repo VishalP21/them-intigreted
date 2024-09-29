@@ -1,0 +1,31 @@
+﻿@model them.BussinessEntity.UserViewModel
+
+<form asp-action="Index" asp-controller="User" method="post">
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" asp-for="Name" class="form-control" id="exampleInputEmail1" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Address1</label>
+            <input type="text" asp-for="Address1" class="form-control" id="exampleInputEmail1" placeholder="Address1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Address2</label>
+            <input type="text" asp-for="Address2" class="form-control" id="exampleInputEmail1" placeholder="Address2">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">City</label>
+            <input type="text" asp-for="City" class="form-control" id="exampleInputEmail1" placeholder="City">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" asp-for="Password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
