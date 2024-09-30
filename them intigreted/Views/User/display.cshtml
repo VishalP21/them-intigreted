@@ -2,6 +2,10 @@
 @model List<them.BussinessEntity.UserViewModel>
 
 <div class="card-body">
+    @if(TempData["message"] != null)
+    {
+        <div class ="alert alert-success" role="alert">@TempData["message"]</div>
+    }
     <table class="table table-bordered" asp-action="display" asp-controller="User">
         <thead>
             <tr>

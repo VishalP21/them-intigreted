@@ -25,13 +25,14 @@ namespace them_intigreted.Controllers
         public IActionResult Index(UserViewModel userViewModel)
         {
                 _userService.adduser(userViewModel);
-           
+            TempData["message"] = "Data Add...";
             return RedirectToAction("display");
         }
 
         public IActionResult edit(int id)
         {
             var data = _userService.getuser(id);
+            TempData["message"] = "Data Edit...";
             return View("Index",data);
         }
 
@@ -47,6 +48,7 @@ namespace them_intigreted.Controllers
         public IActionResult delete(int id)
         {
             _userService.deleteuser(id);
+            TempData["message"] = "Data Delete...";
             return RedirectToAction("display");
         }
 
