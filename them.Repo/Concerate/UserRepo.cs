@@ -20,5 +20,36 @@ namespace them.Repo.Concerate
             ntireCrudContext.Users.Add(user);
             return ntireCrudContext.SaveChanges()>0?true:false;
         }
+
+        public bool deleteuser(int userid)
+        {
+           var v = ntireCrudContext.Users.SingleOrDefault(y=>y.Id == userid);
+           ntireCrudContext.Users.Remove(v);
+            return ntireCrudContext.SaveChanges() > 0 ? true : false;
+        }
+
+        public User getuser(int uid)
+        {
+             
+            return ntireCrudContext.Users.Find(uid);
+        }
+
+        public List<User> getusers()
+        {
+            return ntireCrudContext.Users.ToList();
+        }
+
+        
+
+        //public bool updateuser(User user)
+        //{
+        //    var v = ntireCrudContext.Users.SingleOrDefault(x=>x.Id == user.Id);
+        //    v.Name = user.Name;
+        //    v.Address1 = user.Address1;
+        //    v.Address2 = user.Address2;
+        //    v.City = user.City;
+        //    v.Password = user.Password;
+        //    return ntireCrudContext.SaveChanges() > 0 ? true : false;
+        //}
     }
 }

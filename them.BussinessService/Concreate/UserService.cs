@@ -22,5 +22,22 @@ namespace them.BussinessService.Concreate
         {
             return userRepo.adduser(userViewModel.ToDataModel());
         }
+
+        public bool deleteuser(int userid)
+        {
+            return userRepo.deleteuser(userid);
+        }
+
+        public UserViewModel getuser(int uid)
+        {
+            return userRepo.getuser(uid).ToDataModele();
+        }
+
+        public List<UserViewModel> getusers()
+        {
+            return userRepo.getusers().ToViewModel();
+        }
+
+        
     }
 }

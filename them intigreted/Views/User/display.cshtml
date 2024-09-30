@@ -1,0 +1,28 @@
+﻿
+@model List<them.BussinessEntity.UserViewModel>
+
+<div class="card-body">
+    <table class="table table-bordered" asp-action="display" asp-controller="User">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address-1</th>
+                <th>Address-2</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var a in Model)
+            {
+            <tr>
+                <td>@a.Name</td>
+                <td>@a.Address1</td>
+                <td>@a.Address2 </td>
+                <td>@a.City </td>
+                    <td><a asp-action="delete" asp-controller="User" asp-route-Id="@a.Id" class="btn btn-block btn-danger">Delete</a></td>
+                    <td><a asp-action="edit" asp-controller="User" asp-route-id="@a.Id"  class="btn btn-block btn-secondary">Edit</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

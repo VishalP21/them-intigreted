@@ -24,8 +24,30 @@ namespace them_intigreted.Controllers
 
         public IActionResult Index(UserViewModel userViewModel)
         {
-            _userService.adduser(userViewModel);
-            return RedirectToAction("Index");
+                _userService.adduser(userViewModel);
+           
+            return RedirectToAction("display");
+        }
+
+        public IActionResult edit(int id)
+        {
+            var data = _userService.getuser(id);
+            return View("Index",data);
+        }
+
+        
+
+        public IActionResult display()
+        {
+            var data = _userService.getusers();
+            return View(data);
+        }
+
+        [HttpGet]
+        public IActionResult delete(int id)
+        {
+            _userService.deleteuser(id);
+            return RedirectToAction("display");
         }
 
        
